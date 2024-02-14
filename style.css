@@ -1,0 +1,18 @@
+
+
+
+
+.newgame button {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    font-size:20px;
+    align-items: center;
+    width:150px;
+    height: 50px;
+}
+
+.player1 h1{
+    color: #000;
+    font-size: 40px;
+}
