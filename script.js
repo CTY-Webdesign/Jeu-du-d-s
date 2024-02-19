@@ -39,25 +39,52 @@ function holdP2() {
     document.getElementById('holdP2').innerText =holdpoint2;
 
 }
+
+
 function rollDice() {
     let randomNumber = Math.floor(Math.random() * 6) + 1; 
     let diceImage = document.getElementById('dice');
     diceImage.src = "images/"+randomNumber+".png";
-    
-    holdpoint1 +=randomNumber;
-    document.getElementById('holdP1').innerText =holdpoint1;
 
-    if (randomNumber===1){
-        holdpoint1=0
-        document.getElementById('holdP1').innerText =holdpoint1;  
+    if (current_player===1){
+        if (randomNumber!==1){
+            holdpoint1+=randomNumber;
+            document.getElementById('holdP1').innerText =holdpoint1;
+        }
+        else{
+            holdpoint1=0;
+            document.getElementById('holdP1').innerText =holdpoint1;
+            current_player=2;
+        }
+    }
+    else if (current_player===2){
+        if (randomNumber!==1){  
+            holdpoint2+=randomNumber;
+            document.getElementById("holdP2").innerText = holdpoint2;
+
+        }
+        else{
+            holdpoint2=0;
+            document.getElementById('holdP2').innerText =holdpoint2;
+            current_player=1;
+        }
     }
 }
 
 function sendHold(){
+    if (current_player===1){
     score_P1=holdpoint1+score_P1;
     holdpoint1=0
     document.getElementById('holdP1').innerText =holdpoint1; 
     document.getElementById('P1').innerText =score_P1;
+    }
+    else if (current_player===2){
+    score_P2=holdpoint2+score_P2;
+    holdpoint2=0
+    document.getElementById('holdP2').innerText =holdpoint2; 
+    document.getElementById('P2').innerText =score_P2;
+
+    }
 }
 
 
