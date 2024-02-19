@@ -10,8 +10,11 @@ function newgame(){
     score_P1=0;
     score_P2=0;
     holdpoint1=0;
+    holdpoint2=0;
     document.getElementById('holdP1').innerText =holdpoint1; 
     document.getElementById('P1').innerText =score_P1;
+    document.getElementById('holdP2').innerText =holdpoint2; 
+    document.getElementById('P2').innerText =score_P2;
 }
 
 function scoreP1() {
@@ -50,6 +53,7 @@ function rollDice() {
         if (randomNumber!==1){
             holdpoint1+=randomNumber;
             document.getElementById('holdP1').innerText =holdpoint1;
+            
         }
         else{
             holdpoint1=0;
@@ -61,6 +65,7 @@ function rollDice() {
         if (randomNumber!==1){  
             holdpoint2+=randomNumber;
             document.getElementById("holdP2").innerText = holdpoint2;
+            
 
         }
         else{
@@ -77,19 +82,32 @@ function sendHold(){
     holdpoint1=0
     document.getElementById('holdP1').innerText =holdpoint1; 
     document.getElementById('P1').innerText =score_P1;
+    current_player=2;
+    victory();
     }
     else if (current_player===2){
     score_P2=holdpoint2+score_P2;
     holdpoint2=0
     document.getElementById('holdP2').innerText =holdpoint2; 
     document.getElementById('P2').innerText =score_P2;
+    current_player=1;
+    victory();
 
     }
 }
 
+function victory(){
+    if (score_P1>=30){
+        alert("Le joueur 1 à gagner !");
+    }
+    else if (score_P2>=30){
+        alert("Le joueur 2 à gagner !");
+    }
+}
 
 scoreP1();
 holdP1();
 scoreP2();
 holdP2();
 rollDice();
+victory();
