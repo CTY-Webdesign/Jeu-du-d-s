@@ -11,6 +11,7 @@ function newgame(){
     score_P2=0;
     holdpoint1=0;
     holdpoint2=0;
+    current_player=1;
     document.getElementById('holdP1').innerText =holdpoint1; 
     document.getElementById('P1').innerText =score_P1;
     document.getElementById('holdP2').innerText =holdpoint2; 
@@ -98,11 +99,15 @@ function sendHold(){
 
 function victory(){
     if (score_P1>=30){
+        document.getElementById('P1').innerText =score_P1;
         alert("Le joueur 1 à gagner !");
+        newgame();
         
     }
     else if (score_P2>=30){
+        document.getElementById('P2').innerText =score_P2;
         alert("Le joueur 2 à gagner !");
+        newgame();  
         
     }
 }
