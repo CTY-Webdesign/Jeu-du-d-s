@@ -99,9 +99,11 @@ function sendHold(){
 function victory(){
     if (score_P1>=30){
         alert("Le joueur 1 à gagner !");
+        
     }
     else if (score_P2>=30){
         alert("Le joueur 2 à gagner !");
+        
     }
 }
 
