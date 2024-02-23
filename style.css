@@ -1,4 +1,13 @@
+/* 
+#fffbfb blanc fond et couleur secondaire texte 
+#dbf1ef bleuvert titre et joueur 
+#e1254c rouge score et current score
+*/
 
+html{
+    background-color: #fffbfb;
+}
+ 
 .newgame button {
     display: flex;
     justify-content: center;
@@ -7,7 +16,18 @@
     align-items: center;
     width:150px;
     height: 50px;
+    background-color: transparent;
+    border:none;
+    color: #113f58;
+    cursor: pointer;
+
 }
+
+.newgame i{
+    margin-right: 10px;
+    color: #ba242a;
+}
+
 
 
 .game{
@@ -21,27 +41,43 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .player h1{
-    color: #000;
+    color: #113f58;
     font-size: 50px;
     text-align: center;
     
 }
 
+#P1{
+    font-size: 60px;
+    color: #ba242a;
+}
+
+#P2{
+    font-size: 60px;
+    color: #ba242a;
+}
+.player i{
+    margin-left: 20px;
+    text-align: center;
+    font-size: 20px;
+
+}
 .holdpoint{
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 200px;
     width: 200px;
-    background-color: brown;
+    background-color: #ba242a;
 }
 
 .holdpoint h3{
     text-transform: uppercase;
-    color: #fff;
+    color:#fffbfb;
     font-size: 30px;
 }
 
@@ -59,7 +95,17 @@
     width: 200px;
     margin: 30px 0;
     font-size: 20px;
+    border: none;
+    background-color: transparent;
+    color: #113f58;
 }
+
+
+.dice i{
+    margin-right:15px;
+    color:  #ba242a;
+}
+
 #dice {
     width: 300px;
     height: 300px;

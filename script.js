@@ -96,7 +96,9 @@ function sendHold(){
 
     }
 }
-
+function activePlayer(){
+    document.getElementsByClassName("fa-solid fa-circle")
+}
 function victory(){
     if (score_P1>=30){
         document.getElementById('P1').innerText =score_P1;
